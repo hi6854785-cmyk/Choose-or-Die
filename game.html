@@ -63,20 +63,127 @@ p {
 </div>
 
 <script>
-/* ===== 질문 데이터 ===== */
+/* ===== 질문 데이터 (100개) ===== */
 const questions = [
-    {
-        text: "You are alone in a dark room. A screen turns on.",
-        choices: ["Look around", "Call for help", "Stay silent", "Close your eyes"]
-    },
-    {
-        text: "The screen flickers. You feel watched.",
-        choices: ["Step closer", "Step back", "Cover the screen", "Do nothing"]
-    },
-    {
-        text: "A message appears: MAKE A CHOICE.",
-        choices: ["Obey", "Resist", "Scream", "Wait"]
-    }
+    { text: "Question 1 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 2 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 3 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 4 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 5 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 6 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 7 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 8 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 9 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 10 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 11 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 12 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 13 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 14 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 15 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 16 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 17 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 18 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 19 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 20 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 21 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 22 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 23 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 24 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 25 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 26 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 27 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 28 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 29 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 30 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 31 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 32 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 33 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 34 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 35 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 36 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 37 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 38 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 39 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 40 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 41 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 42 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 43 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 44 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 45 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 46 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 47 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 48 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 49 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 50 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 51 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 52 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 53 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 54 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 55 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 56 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 57 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 58 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 59 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 60 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 61 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 62 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 63 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 64 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 65 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 66 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 67 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 68 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 69 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 70 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 71 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 72 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 73 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 74 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 75 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 76 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 77 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 78 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 79 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 80 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 81 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 82 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 83 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 84 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 85 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 86 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 87 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 88 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 89 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 90 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 91 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 92 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 93 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 94 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 95 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+
+    { text: "Question 96 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 97 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 98 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 99 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] },
+    { text: "Question 100 placeholder.", choices: ["Choice A","Choice B","Choice C","Choice D"] }
 ];
 
 let current = 0;
@@ -89,7 +196,7 @@ function loadQuestion() {
     }
 
     document.getElementById("q-number").innerText =
-        `Question ${current + 1}`;
+        `Question ${current + 1} / 100`;
 
     document.getElementById("q-text").innerText =
         questions[current].text;
@@ -104,7 +211,6 @@ function nextQuestion() {
     loadQuestion();
 }
 
-/* ✅ 버튼 클릭 이벤트 직접 연결 (핵심) */
 buttons.forEach(btn => {
     btn.addEventListener("click", nextQuestion);
 });
@@ -113,4 +219,3 @@ loadQuestion();
 </script>
 </body>
 </html>
-
