@@ -1012,6 +1012,27 @@ function nextQuestion() {
 
 /* 첫 질문 로드 */
 loadQuestion();
+<script>
+let fullscreenStarted = false;
+
+function requestFullscreenOnce() {
+    if (fullscreenStarted) return;
+
+    const elem = document.documentElement;
+    if (elem.requestFullscreen) elem.requestFullscreen();
+    else if (elem.webkitRequestFullscreen) elem.webkitRequestFullscreen();
+    else if (elem.msRequestFullscreen) elem.msRequestFullscreen();
+
+    fullscreenStarted = true;
+}
+
+/* 선택지 버튼에만 전체화면 요청 연결 */
+const fsButtons = document.getElementsByClassName("choice");
+for (let btn of fsButtons) {
+    btn.addEventListener("click", requestFullscreenOnce);
+}
+</script>
+
 </script>
 
 </body>
