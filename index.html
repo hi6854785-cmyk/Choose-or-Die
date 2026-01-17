@@ -1,44 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>내 사이트</title>
+    <title>Choose or Die</title>
 
     <style>
         body {
             background-color: black;
             color: white;
             margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin: 12px 0;
+        }
+
+        .start-button {
+            margin-top: 40px;
+            background-color: #00ff00;
+            color: black;
+            font-size: 24px;
+            padding: 15px 50px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .start-button:hover {
+            background-color: #00cc00;
         }
     </style>
 </head>
 
 <body>
-    <h1>Welcome.
-You have entered the “Choose or Die” website.
+    <div class="container">
+        <h1>Welcome.</h1>
 
-Here, you will be forced to answer 100 questions.
-There is no shortcut. There is no escape.
+        <p>You have entered the <strong>“Choose or Die”</strong> website.</p>
 
-The rules are simple.
-Press the Start button below to proceed.
+        <p>
+            Here, you will be forced to answer <strong>100 questions</strong>.<br>
+            There is no shortcut. There is no escape.
+        </p>
 
-Each page will present you with four choices.
-Choose carefully.
-Only one choice will allow you to move forward.
+        <p>
+            The rules are simple.<br>
+            Press the <strong>Start</strong> button below to proceed.
+        </p>
 
-A wrong decision, or any attempt to abandon the process midway, will result in consequences.
-Those consequences will be irreversible, and the responsibility will be entirely yours.
+        <p>
+            Each page will present you with <strong>four choices</strong>.<br>
+            Choose carefully.<br>
+            Only one choice will allow you to move forward.
+        </p>
 
-Once all 100 questions have been answered, a final page will appear.
-There, you will find a message… and a button.
+        <p>
+            A wrong decision, or any attempt to abandon the process midway,<br>
+            will result in <strong>consequences</strong>.<br>
+            Those consequences will be <strong>irreversible</strong>, and the responsibility will be <strong>entirely yours</strong>.
+        </p>
 
-Press it, and you may leave this site.
+        <p>
+            Once all 100 questions have been answered, a final page will appear.<br>
+            There, you will find a message… and a button.
+        </p>
 
-Fail, and you will not.
+        <p>
+            Press it, and you may leave this site.<br>
+            Fail, and you will not.
+        </p>
 
-Good luck.
-You will need it.</h1>
-    <p>배경이 검은색입니다.</p>
+        <p><strong>Good luck.</strong><br>You will need it.</p>
+
+        <button class="start-button">START</button>
+    </div>
 </body>
 </html>
+
