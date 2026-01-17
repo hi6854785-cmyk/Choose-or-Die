@@ -1,62 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Question 1</title>
+<meta charset="UTF-8">
+<title>Choose or Die</title>
 
-    <style>
-        body {
-            background-color: black;
-            color: white;
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+<style>
+body {
+    background-color: black;
+    color: white;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-        .container {
-            max-width: 700px;
-            text-align: center;
-            padding: 40px;
-        }
+.container {
+    max-width: 700px;
+    text-align: center;
+    padding: 40px;
+}
 
-        h1 {
-            font-size: 32px;
-            margin-bottom: 30px;
-        }
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
 
-        .choice {
-            display: block;
-            margin: 15px auto;
-            padding: 15px;
-            width: 100%;
-            background-color: #111;
-            color: white;
-            border: 1px solid #444;
-            font-size: 18px;
-            cursor: pointer;
-        }
+p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
 
-        .choice:hover {
-            background-color: #222;
-        }
-    </style>
+.choice {
+    display: block;
+    margin: 15px auto;
+    padding: 15px;
+    width: 100%;
+    background-color: #111;
+    color: white;
+    border: 1px solid #444;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.choice:hover {
+    background-color: #222;
+}
+</style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Question 1</h1>
+<div class="container">
+    <h1 id="q-number"></h1>
+    <p id="q-text"></p>
 
-        <p>You are alone in a dark room.<br>
-        A screen turns on in front of you.</p>
+    <button class="choice" onclick="next()">Choice A</button>
+    <button class="choice" onclick="next()">Choice B</button>
+    <button class="choice" onclick="next()">Choice C</button>
+    <button class="choice" onclick="next()">Choice D</button>
+</div>
 
-        <button class="choice">Look around</button>
-        <button class="choice">Call for help</button>
-        <button class="choice">Stay silent</button>
-        <button class="choice">Close your eyes</button>
-    </div>
+<script>
+/* =========================
+   질문 100개 (내용 수정용)
+   ========================= */
+const questions = [
+    { text: "Question 1 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 2 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 3 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 4 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 5 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 6 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 7 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 8 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 9 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 10 placeholder.", choices:["A","B","C","D"] },
+
+    { text: "Question 11 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 12 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 13 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 14 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 15 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 16 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 17 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 18 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 19 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 20 placeholder.", choices:["A","B","C","D"] },
+
+    { text: "Question 21 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 22 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 23 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 24 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 25 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 26 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 27 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 28 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 29 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 30 placeholder.", choices:["A","B","C","D"] },
+
+    { text: "Question 31 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 32 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 33 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 34 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 35 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 36 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 37 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 38 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 39 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 40 placeholder.", choices:["A","B","C","D"] },
+
+    { text: "Question 41 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 42 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 43 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 44 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 45 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 46 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 47 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 48 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 49 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 50 placeholder.", choices:["A","B","C","D"] },
+
+    { text: "Question 51 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 52 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 53 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 54 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 55 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 56 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 57 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 58 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 59 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 60 placeholder.", choices:["A","B","C","D"] },
+
+    { text: "Question 61 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 62 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 63 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 64 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 65 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 66 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 67 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 68 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 69 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 70 placeholder.", choices:["A","B","C","D"] },
+
+    { text: "Question 71 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 72 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 73 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 74 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 75 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 76 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 77 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 78 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 79 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 80 placeholder.", choices:["A","B","C","D"] },
+
+    { text: "Question 81 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 82 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 83 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 84 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 85 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 86 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 87 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 88 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 89 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 90 placeholder.", choices:["A","B","C","D"] },
+
+    { text: "Question 91 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 92 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 93 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 94 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 95 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 96 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 97 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 98 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 99 placeholder.", choices:["A","B","C","D"] },
+    { text: "Question 100 placeholder.", choices:["A","B","C","D"] }
+];
+
+let current = 0;
+
+function load() {
+    if (current >= questions.length) {
+        location.href = "ending.html";
+        return;
+    }
+
+    document.getElementById("q-number").innerText =
+        `Question ${current + 1} / 100`;
+
+    document.getElementById("q-text").innerText =
+        questions[current].text;
+
+    const btns = document.querySelectorAll(".choice");
+    for (let i = 0; i < 4; i++) {
+        btns[i].innerText = questions[current].choices[i];
+    }
+}
+
+function next() {
+    current++;
+    load();
+}
+
+load();
+</script>
 </body>
 </html>
+
 
